@@ -578,11 +578,18 @@
             background: var(--gold);
             border: 1px solid rgba(255,255,255,0.22);
             box-shadow: var(--shadow);
-            transition: transform 0.3s;
+            transition: transform 0.3s, opacity 0.3s;
+            opacity: 0;
+            pointer-events: none;
         }
 
         .back-to-top:hover {
             transform: scale(1.1);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         /* Mobile Optimizations */
@@ -1390,12 +1397,19 @@
         window.addEventListener('scroll', function() {
             const backToTop = document.querySelector('.back-to-top');
             if (window.pageYOffset > 300) {
-                backToTop.style.opacity = '1';
-                backToTop.style.pointerEvents = 'auto';
+                backToTop.classList.add('visible');
             } else {
-                backToTop.style.opacity = '0';
-                backToTop.style.pointerEvents = 'none';
+                backToTop.classList.remove('visible');
             }
+        });
+        
+        // Smooth scroll to top on click
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
         
         // Scroll Animation Observer
