@@ -117,6 +117,9 @@
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
             overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
         }
 
         /* Atmospheric overlay */
@@ -439,7 +442,8 @@
             width: 100%;
             height: auto;
             aspect-ratio: 1;
-            object-fit: cover;
+            object-fit: contain;
+            background: rgba(0, 0, 0, 0.05);
             border-radius: 18px;
             border: 1px solid var(--stroke2);
             box-shadow: var(--shadow2);
@@ -596,6 +600,15 @@
         @media (max-width: 768px) {
             body {
                 font-size: 16px;
+                overflow-x: hidden;
+                position: relative;
+                width: 100%;
+                max-width: 100vw;
+            }
+            
+            html {
+                overflow-x: hidden;
+                width: 100%;
             }
 
             nav {
@@ -1202,12 +1215,15 @@
     <section id="gallery" class="fade-in">
         <h2>Gallery</h2>
         <div class="gallery">
+            <img src="img/IMG_8545.JPEG" alt="Aaryan Tiwari Latest">
+            <img src="img/IMG_7363.PNG" alt="Aaryan Tiwari with Jeetendra">
+            <img src="img/IMG_8235.JPEG" alt="Aaryan Tiwari Portrait">
             <img src="img/IMG_8234.JPEG" alt="Aaryan Tiwari with Guitar">
             <img src="img/IMG_8232.JPEG" alt="Aaryan Tiwari Live Performance">
-            <img src="img/IMG_9367_JPG.jpeg" alt="Aaryan Tiwari Concert Performance">
             <img src="img/IMG_8231.JPEG" alt="Aaryan Tiwari Playing Guitar Outdoors">
-            <img src="img/WhatsApp_Image_2026-02-02_at_3_17_27_AM.jpeg" alt="Aaryan Tiwari Photoshoot">
+            <img src="img/IMG_9367_JPG.jpeg" alt="Aaryan Tiwari Concert">
             <img src="img/IMG_9370_JPG.jpeg" alt="Aaryan Tiwari Stage Performance">
+            <img src="img/WhatsApp_Image_2026-02-02_at_3_17_27_AM.jpeg" alt="Aaryan Tiwari Photoshoot">
         </div>
     </section>
 
