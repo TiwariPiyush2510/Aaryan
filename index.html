@@ -439,7 +439,7 @@
             width: 100%;
             height: auto;
             aspect-ratio: 1;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 18px;
             border: 1px solid var(--stroke2);
             box-shadow: var(--shadow2);
@@ -872,11 +872,11 @@
 
     <section class="hero" id="hero">
         <!-- Hero Background Image -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden;">
-            <img src="img/IMG_8231.JPEG" alt="Aaryan Tiwari" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.35; filter: blur(1px) brightness(0.7);">
-        </div>
-        
-        <div class="hero-content">
+       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; background: #000;">
+    <img src="img/IMG_8231.JPEG" 
+         alt="Aaryan Tiwari"
+       <img src="img/IMG_8231.JPEG"
+     style="width:100%; height:100%; object-fit:cover; object-position: top center; opacity:0.35; filter: blur(1px) brightness(0.7);"></div>        <div class="hero-content">
             <h1>AARYAN TIWARI</h1>
             <p>Singer · Composer · Lyricist · Performer</p>
             <p>"An IITian Turned Musician"</p>
@@ -1499,6 +1499,20 @@
                 }
             });
         });
+// Make back-to-top arrow always work (nav is fixed, so scrollIntoView can be weird)
+document.addEventListener('DOMContentLoaded', function () {
+  const backToTop = document.querySelector('.back-to-top');
+  if (!backToTop) return;
+
+  backToTop.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+
+
+
     </script>
 </body>
 </html>
