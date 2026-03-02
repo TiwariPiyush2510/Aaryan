@@ -859,9 +859,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 20%;
-            opacity: 0.35;
-            filter: blur(1px) brightness(0.7);
+            object-position: center center;
+            opacity: 0.5;
+            filter: brightness(0.75);
         }
         
         .hero-overlay {
@@ -879,42 +879,42 @@
             z-index: 1;
         }
         
-        /* MOBILE - Clear, non-blurry image */
+        /* MOBILE - Clear, vibrant artwork display */
         @media (max-width: 768px) {
             .hero-bg-img {
-                object-fit: contain !important;
+                object-fit: cover !important;
                 object-position: center center !important;
-                opacity: 0.8 !important;
-                filter: blur(0px) brightness(0.9) !important;
+                opacity: 0.65 !important;
+                filter: brightness(0.85) !important;
             }
             
             .hero-overlay {
                 background: linear-gradient(
                     to bottom,
-                    rgba(26, 26, 26, 0.15) 0%,
-                    rgba(26, 26, 26, 0.35) 50%,
-                    rgba(26, 26, 26, 0.55) 100%
+                    rgba(26, 26, 26, 0.25) 0%,
+                    rgba(26, 26, 26, 0.45) 50%,
+                    rgba(26, 26, 26, 0.65) 100%
                 ) !important;
             }
             
             .hero {
-                padding-top: 100px;
+                padding-top: 80px;
             }
         }
         
-        /* VERY SMALL PHONES - Even clearer */
+        /* VERY SMALL PHONES - Keep artwork vibrant */
         @media (max-width: 480px) {
             .hero-bg-img {
-                opacity: 0.85 !important;
-                filter: blur(0px) brightness(0.95) !important;
+                opacity: 0.7 !important;
+                filter: brightness(0.9) !important;
             }
             
             .hero-overlay {
                 background: linear-gradient(
                     to bottom,
-                    rgba(26, 26, 26, 0.1) 0%,
-                    rgba(26, 26, 26, 0.3) 50%,
-                    rgba(26, 26, 26, 0.5) 100%
+                    rgba(26, 26, 26, 0.2) 0%,
+                    rgba(26, 26, 26, 0.4) 50%,
+                    rgba(26, 26, 26, 0.6) 100%
                 ) !important;
             }
         }
@@ -948,7 +948,7 @@
     <section class="hero" id="hero">
         <!-- Hero Background Image -->
         <div class="hero-bg-container">
-            <img class="hero-bg-img" src="img/IMG_8231.JPEG" alt="Aaryan Tiwari">
+            <img class="hero-bg-img" src="img/TNYBRH.jpg" alt="Tere Naal Yaar Bas Rehna Hai - Aaryan Tiwari">
         </div>
         <div class="hero-overlay"></div>
         
