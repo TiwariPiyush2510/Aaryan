@@ -883,9 +883,30 @@
         @media (max-width: 768px) {
             .hero-bg-img {
                 object-fit: contain !important;
-                object-position: center !important;
-                opacity: 0.7 !important;
-                filter: blur(0px) brightness(0.85) !important;
+                object-position: center center !important;
+                opacity: 0.8 !important;
+                filter: blur(0px) brightness(0.9) !important;
+            }
+            
+            .hero-overlay {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(26, 26, 26, 0.15) 0%,
+                    rgba(26, 26, 26, 0.35) 50%,
+                    rgba(26, 26, 26, 0.55) 100%
+                ) !important;
+            }
+            
+            .hero {
+                padding-top: 100px;
+            }
+        }
+        
+        /* VERY SMALL PHONES - Even clearer */
+        @media (max-width: 480px) {
+            .hero-bg-img {
+                opacity: 0.85 !important;
+                filter: blur(0px) brightness(0.95) !important;
             }
             
             .hero-overlay {
@@ -894,23 +915,6 @@
                     rgba(26, 26, 26, 0.1) 0%,
                     rgba(26, 26, 26, 0.3) 50%,
                     rgba(26, 26, 26, 0.5) 100%
-                ) !important;
-            }
-        }
-        
-        /* VERY SMALL PHONES - Even clearer */
-        @media (max-width: 480px) {
-            .hero-bg-img {
-                opacity: 0.75 !important;
-                filter: blur(0px) brightness(0.9) !important;
-            }
-            
-            .hero-overlay {
-                background: linear-gradient(
-                    to bottom,
-                    rgba(26, 26, 26, 0.05) 0%,
-                    rgba(26, 26, 26, 0.25) 50%,
-                    rgba(26, 26, 26, 0.45) 100%
                 ) !important;
             }
         }
