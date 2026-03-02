@@ -843,6 +843,77 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+        /* Hero Background Container & Image - Mobile Optimized */
+        .hero-bg-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .hero-bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+            opacity: 0.35;
+            filter: blur(1px) brightness(0.7);
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(26, 26, 26, 0.3) 0%,
+                rgba(26, 26, 26, 0.5) 50%,
+                rgba(26, 26, 26, 0.6) 100%
+            );
+            z-index: 1;
+        }
+        
+        /* MOBILE - Clear, non-blurry image */
+        @media (max-width: 768px) {
+            .hero-bg-img {
+                object-fit: contain !important;
+                object-position: center !important;
+                opacity: 0.7 !important;
+                filter: blur(0px) brightness(0.85) !important;
+            }
+            
+            .hero-overlay {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(26, 26, 26, 0.1) 0%,
+                    rgba(26, 26, 26, 0.3) 50%,
+                    rgba(26, 26, 26, 0.5) 100%
+                ) !important;
+            }
+        }
+        
+        /* VERY SMALL PHONES - Even clearer */
+        @media (max-width: 480px) {
+            .hero-bg-img {
+                opacity: 0.75 !important;
+                filter: blur(0px) brightness(0.9) !important;
+            }
+            
+            .hero-overlay {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(26, 26, 26, 0.05) 0%,
+                    rgba(26, 26, 26, 0.25) 50%,
+                    rgba(26, 26, 26, 0.45) 100%
+                ) !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -872,9 +943,10 @@
 
     <section class="hero" id="hero">
         <!-- Hero Background Image -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden;">
-            <img src="img/IMG_8231.JPEG" alt="Aaryan Tiwari" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.35; filter: blur(1px) brightness(0.7);">
+        <div class="hero-bg-container">
+            <img class="hero-bg-img" src="img/IMG_8231.JPEG" alt="Aaryan Tiwari">
         </div>
+        <div class="hero-overlay"></div>
         
         <div class="hero-content">
             <h1>AARYAN TIWARI</h1>
