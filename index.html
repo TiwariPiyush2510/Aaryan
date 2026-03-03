@@ -558,10 +558,29 @@
             text-align: center;
             margin-top: 3rem;
             padding: 2rem;
-            background: var(--surface2);
-            border: 1px solid var(--stroke2);
+            background: rgba(45, 10, 31, 0.4);
+            border: 2px solid var(--gold);
             border-radius: 15px;
-            box-shadow: var(--shadow2);
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+        }
+        
+        .management-contact h3 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .management-contact p {
+            color: #FFFFFF !important;
+            font-size: 1.2rem;
+        }
+        
+        .management-contact .highlight {
+            color: #FFFFFF !important;
+            font-weight: bold;
+            font-size: 1.3rem;
         }
 
         /* Footer */
@@ -1053,6 +1072,22 @@
         
         /* ========== NEW ULTRA LUXURY STYLES ========== */
         
+        /* Simple animated gradient background - mobile safe */
+        .luxury-gradient-bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212,175,55,0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(212,175,55,0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(45,10,31,0.3) 0%, transparent 70%);
+            animation: gradientShift 10s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        
         .luxury-overlay {
             position: absolute;
             inset: 0;
@@ -1239,6 +1274,7 @@
             color: rgba(212,175,55,0.7);
             letter-spacing: 4px;
             font-weight: 300;
+            white-space: nowrap;
         }
         
         .luxury-loader {
@@ -1366,6 +1402,13 @@
             .glow-ring.ring-3 { width: 380px; height: 380px; }
             .logo-premium-container img { height: 280px !important; }
             .luxury-loader { width: 280px; }
+            .subtitle-text { 
+                font-size: 0.6rem !important;
+                letter-spacing: 2px !important;
+            }
+            .subtitle-line {
+                width: 25px !important;
+            }
         }
         
         .loader-logo {
@@ -1467,15 +1510,15 @@
     </style>
 </head>
 <body>
-    <!-- ULTRA LUXURY CINEMATIC LOADING EXPERIENCE -->
+    <!-- ULTRA LUXURY CINEMATIC LOADING EXPERIENCE - MOBILE OPTIMIZED -->
     <div class="page-loader" id="pageLoader">
-        <!-- Animated luxury background -->
-        <canvas id="luxuryCanvas" style="position: absolute; inset: 0; opacity: 0.3;"></canvas>
+        <!-- Simple gradient background - NO CANVAS -->
+        <div class="luxury-gradient-bg"></div>
         
         <!-- Premium gradient overlays -->
         <div class="luxury-overlay"></div>
         
-        <!-- Floating gold particles -->
+        <!-- Floating gold particles - CSS ONLY -->
         <div class="gold-particles">
             <div class="gp"></div><div class="gp"></div><div class="gp"></div>
             <div class="gp"></div><div class="gp"></div><div class="gp"></div>
@@ -1546,66 +1589,7 @@
     </div>
     
     <script>
-        // Luxury animated background
-        (function() {
-            const canvas = document.getElementById('luxuryCanvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            
-            const particles = [];
-            for (let i = 0; i < 50; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    vx: (Math.random() - 0.5) * 0.5,
-                    vy: (Math.random() - 0.5) * 0.5,
-                    size: Math.random() * 2 + 1
-                });
-            }
-            
-            function animate() {
-                ctx.fillStyle = 'rgba(26, 10, 21, 0.05)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                particles.forEach((p, i) => {
-                    p.x += p.vx;
-                    p.y += p.vy;
-                    
-                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-                    
-                    const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 3);
-                    gradient.addColorStop(0, 'rgba(212, 175, 55, 0.8)');
-                    gradient.addColorStop(1, 'rgba(212, 175, 55, 0)');
-                    
-                    ctx.beginPath();
-                    ctx.fillStyle = gradient;
-                    ctx.arc(p.x, p.y, p.size * 3, 0, Math.PI * 2);
-                    ctx.fill();
-                    
-                    // Connect nearby particles
-                    particles.slice(i + 1).forEach(p2 => {
-                        const dx = p.x - p2.x;
-                        const dy = p.y - p2.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        
-                        if (dist < 100) {
-                            ctx.strokeStyle = `rgba(212, 175, 55, ${0.2 * (1 - dist / 100)})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.beginPath();
-                            ctx.moveTo(p.x, p.y);
-                            ctx.lineTo(p2.x, p2.y);
-                            ctx.stroke();
-                        }
-                    });
-                });
-                
-                requestAnimationFrame(animate);
-            }
-            animate();
-        })();
+        // Mobile-safe loader - no canvas animation
     </script>
 
     <nav id="top">
