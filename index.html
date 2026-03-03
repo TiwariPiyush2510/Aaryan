@@ -26,8 +26,8 @@
     <meta property="twitter:description" content="IIT Roorkee to Bollywood - Listen to my latest music">
     <meta property="twitter:image" content="https://www.aaryantiwari.com/img/IMG_8235.JPEG">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='64' height='64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' fill='%232d0a1f'/%3E%3Ctext x='32' y='45' font-size='40' text-anchor='middle' fill='%23d4af37' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E">
+    <!-- Favicon - Official Aaryan Logo -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 54 L 32 10 L 44 54 Z' fill='%23000000'/%3E%3Cpath d='M 28 24 L 30 14 Q 32 12 34 14 L 36 24 Q 34 28 32 32 Q 30 28 28 24 Z' fill='%23FFFFFF'/%3E%3Cellipse cx='32' cy='34' rx='5' ry='8' fill='%23FFFFFF'/%3E%3C/svg%3E">
     
     <!-- Google Analytics (Replace with your tracking ID) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -160,10 +160,24 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 300;
             color: var(--gold);
-            letter-spacing: 2px;
+            letter-spacing: 6px;
             text-decoration: none;
+            font-family: ui-serif, Georgia, "Times New Roman", serif;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .logo::before {
+            content: "";
+            width: 32px;
+            height: 32px;
+            background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 54 L 32 10 L 44 54 Z' fill='%23d4af37'/%3E%3Cpath d='M 28 24 L 30 14 Q 32 12 34 14 L 36 24 Q 34 28 32 32 Q 30 28 28 24 Z' fill='%232d0a1f'/%3E%3Cellipse cx='32' cy='34' rx='5' ry='8' fill='%232d0a1f'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 2px 4px rgba(212,175,55,0.3));
         }
 
         .menu-toggle {
@@ -830,7 +844,7 @@
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+            transition: opacity 1.2s ease-out, visibility 1.2s ease-out;
         }
         
         .page-loader.hidden {
@@ -840,6 +854,15 @@
         
         .loader-content {
             text-align: center;
+        }
+        
+        .loader-logo-container {
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
         }
         
         .loader-logo {
@@ -941,17 +964,44 @@
     </style>
 </head>
 <body>
-    <!-- Page Loader -->
+    <!-- Page Loader with Official Logo (Exact from Business Card) -->
     <div class="page-loader" id="pageLoader">
         <div class="loader-content">
-            <div class="loader-logo">A</div>
+            <div class="loader-logo-container" style="margin-bottom: 2rem;">
+                <svg width="150" height="200" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 10px 40px rgba(212,175,55,0.6));">
+                    <!-- Official Logo: Black letter A with white guitar -->
+                    <!-- Letter A (trapezoid shape) -->
+                    <path d="M 80 280 L 150 20 L 220 280 Z" fill="#FFFFFF"/>
+                    
+                    <!-- Guitar neck cutout (negative space) -->
+                    <path d="M 135 100 L 145 45 Q 150 40 155 45 L 165 100 Q 162 120 150 150 Q 138 120 135 100 Z" fill="#2d0a1f"/>
+                    
+                    <!-- Guitar body (rounded bottom) -->
+                    <ellipse cx="150" cy="160" rx="20" ry="35" fill="#2d0a1f"/>
+                    
+                    <!-- Guitar headstock (top) -->
+                    <path d="M 145 45 L 147 30 Q 150 25 153 30 L 155 45 Z" fill="#2d0a1f"/>
+                    
+                    <!-- Tuning pegs -->
+                    <circle cx="146" cy="32" r="2" fill="#FFFFFF"/>
+                    <circle cx="150" cy="28" r="2" fill="#FFFFFF"/>
+                    <circle cx="154" cy="32" r="2" fill="#FFFFFF"/>
+                    
+                    <!-- "Aaryan" in signature script style -->
+                    <text x="150" y="330" font-family="'Brush Script MT', 'Segoe Script', cursive, serif" font-size="48" fill="#FFFFFF" text-anchor="middle" font-style="italic" font-weight="normal">Aaryan</text>
+                    
+                    <!-- "T I W A R I" in spaced letters -->
+                    <text x="150" y="365" font-family="'Georgia', 'Times New Roman', serif" font-size="20" fill="#FFFFFF" text-anchor="middle" letter-spacing="12" font-weight="300">T I W A R I</text>
+                </svg>
+            </div>
             <div class="loader-spinner"></div>
+            <p style="color: var(--gold); margin-top: 1rem; font-size: 0.9rem; opacity: 0.8; letter-spacing: 2px;">L O A D I N G</p>
         </div>
     </div>
 
     <nav id="top">
         <div class="nav-content">
-            <a href="#top" class="logo">AARYAN TIWARI</a>
+            <a href="#top" class="logo">A A R Y A N</a>
             <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#latest" onclick="closeMenu()">Latest</a></li>
@@ -1784,12 +1834,13 @@
     <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
 
     <script>
-        // Hide page loader when everything is loaded
+        // Hide page loader gracefully after content loads
         window.addEventListener('load', function() {
             const loader = document.getElementById('pageLoader');
+            // Keep the logo visible for 2 seconds after page loads, then fade slowly
             setTimeout(() => {
                 loader.classList.add('hidden');
-            }, 500);
+            }, 2000); // Changed from 500ms to 2000ms for graceful exit
         });
         
         // Mobile menu toggle
