@@ -3295,6 +3295,166 @@ please contact management directly.
                 box-shadow: 0 0 0 15px rgba(212,175,55,0);
             }
         }
+# 🔥 COPY THIS CODE INTO YOUR index.html FILE! 
+
+## 📍 STEP 1: ADD THIS CSS (Find </style> and add BEFORE it)
+
+/* 🔥 MOBILE-SAFE MICRO-ANIMATIONS - ZERO CRASH! */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 💎 BUTTON GLOW & LIFT - Desktop Only */
+@media (min-width: 769px) {
+    .cta-button, button, a.cta-button {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+    }
+    
+    .cta-button:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 40px rgba(212, 175, 55, 0.6);
+    }
+}
+
+/* ✨ CARD LIFT EFFECT - Desktop Only */
+@media (min-width: 769px) {
+    .stat-box, div[style*="background: linear-gradient"] {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .stat-box:hover, div[style*="background: linear-gradient"]:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
+    }
+}
+
+/* 🎯 SMOOTH SCROLL REVEAL */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 📱 MOBILE: INSTANT, NO ANIMATIONS */
+@media (max-width: 768px) {
+    .fade-in {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: none !important;
+    }
+    
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .cta-button:active, button:active {
+        opacity: 0.8;
+    }
+}
+
+/* 🎨 TEXT GLOW - Desktop Only */
+@media (min-width: 769px) {
+    h1, h2 {
+        transition: text-shadow 0.3s ease;
+    }
+    
+    h1:hover, h2:hover {
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    }
+}
+
+/* 💫 GLASSMORPHISM - Lighter on Mobile */
+@media (max-width: 768px) {
+    [style*="backdrop-filter"] {
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+    }
+}
+
+---
+
+## 📍 STEP 2: ADD THIS JAVASCRIPT (Find </body> and add BEFORE it)
+
+<script>
+// 🎯 SCROLL REVEAL - Desktop Only
+if (window.innerWidth > 768) {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+    
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// 📱 Mobile: Make everything visible immediately
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768;
+
+if (isMobile) {
+    document.querySelectorAll('.fade-in').forEach(el => {
+        el.classList.add('visible');
+    });
+    
+    // Ensure no animations on mobile
+    const style = document.createElement('style');
+    style.textContent = '* { animation: none !important; transition: none !important; }';
+    document.head.appendChild(style);
+}
+
+console.log('🔥 Mobile-safe animations loaded!');
+</script>
+
+---
+
+## ✅ DONE! NOW YOU HAVE:
+
+✅ Beautiful animations on DESKTOP
+✅ ZERO animations on MOBILE (instant, never crashes!)
+✅ Smooth 60fps desktop performance
+✅ Lightning-fast mobile loading
+
+
     </style>
     
     <!-- Timeline Mobile Responsive Styles -->
