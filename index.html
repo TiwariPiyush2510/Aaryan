@@ -2760,20 +2760,27 @@
     <script>
         // Hide page loader gracefully - FASTER ON MOBILE
        // ⚡ INSTANT LOADING - NO DELAY!
+// 🎸 PERFECT LOADING - See the animation on mobile!
 window.addEventListener('DOMContentLoaded', function() {
     const loader = document.getElementById('pageLoader');
+    const isMobile = window.innerWidth <= 768;
     
-    // Hide immediately when content is ready
+    // Mobile: 1.2 seconds (perfect timing to see the guitar!)
+    // Desktop: 0.5 seconds (faster for desktop users)
+    const delay = isMobile ? 1200 : 500;
+    
     setTimeout(() => {
         loader.classList.add('hidden');
-    }, 100); // Just 0.1 second - super fast!
+    }, delay);
 });
 
 // Backup: If DOMContentLoaded already fired
 if (document.readyState === 'interactive' || document.readyState === 'complete') {
     const loader = document.getElementById('pageLoader');
     if (loader) {
-        loader.classList.add('hidden');
+        setTimeout(() => {
+            loader.classList.add('hidden');
+        }, window.innerWidth <= 768 ? 1200 : 500);
     }
 }
         
