@@ -616,7 +616,7 @@
         .back-to-top {
             position: fixed;
             right: 20px;
-            bottom: 20px;
+            bottom: 100px;
             z-index: 2147483647;
             width: 52px;
             height: 52px;
@@ -770,7 +770,7 @@
                 width: 48px;
                 height: 48px;
                 right: 16px;
-                bottom: 16px;
+                bottom: 90px;
                 font-size: 20px;
             }
         }
@@ -3096,33 +3096,32 @@ please contact management directly.
             }
         }
     </style>
-    <!-- 📱 WHATSAPP FLOATING BUTTON - PREMIUM FEATURE -->
+    <!-- 📱 WHATSAPP FLOATING BUTTON - CLEAN VERSION -->
     <a href="https://wa.me/919892876244?text=Hi%20Brijesh,%20I'm%20interested%20in%20booking%20Aaryan%20Tiwari%20for%20an%20event" 
        target="_blank"
        class="whatsapp-float"
        aria-label="Contact on WhatsApp"
-       style="position: fixed; bottom: 25px; right: 25px; width: 65px; height: 65px; background: linear-gradient(135deg, #25D366, #128C7E); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4); z-index: 9998; text-decoration: none; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); animation: whatsappPulse 2s infinite;"
-       onmouseover="this.style.transform='scale(1.15)'; this.style.boxShadow='0 15px 50px rgba(37, 211, 102, 0.6)'"
+       style="position: fixed; bottom: 25px; right: 25px; width: 65px; height: 65px; background: linear-gradient(135deg, #25D366, #128C7E); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4); z-index: 9998; text-decoration: none; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);"
+       onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 15px 50px rgba(37, 211, 102, 0.6)'"
        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 30px rgba(37, 211, 102, 0.4)'">
-        <svg width="35" height="35" viewBox="0 0 32 32" fill="white">
+        <svg width="38" height="38" viewBox="0 0 32 32" fill="white">
             <path d="M16 0C7.164 0 0 7.163 0 16c0 2.825.738 5.477 2.026 7.772L0 32l8.448-2.016C10.711 31.22 13.3 32 16 32c8.836 0 16-7.163 16-16S24.836 0 16 0zm8.14 22.808c-.36.934-1.784 1.712-2.92 1.963-.756.168-1.745.302-5.085-1.093-4.27-1.783-6.986-6.092-7.198-6.37-.212-.279-1.725-2.295-1.725-4.38 0-2.084 1.092-3.108 1.48-3.533.389-.425.849-.532 1.134-.532s.57.006.823.016c.263.011.617-.099.966.737.348.836 1.19 2.904 1.295 3.114.105.21.175.456.035.735-.14.28-.21.454-.42.699-.21.244-.441.545-.632.732-.21.209-.428.434-.184.85.244.417 1.088 1.793 2.334 2.905 1.603 1.431 2.953 1.875 3.373 2.085.42.21.664.175.909-.105.244-.28 1.05-1.224 1.33-1.645.28-.42.56-.35.945-.21.384.14 2.45 1.156 2.87 1.365.42.21.699.315.804.49.105.175.105 1.015-.255 1.949z"/>
         </svg>
-        <span style="position: absolute; top: 2px; right: 2px; width: 18px; height: 18px; background: #FF3B30; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; color: white; border: 2px solid #25D366; animation: notificationPulse 2s infinite;">1</span>
     </a>
 
     <style>
+        /* Simple pulse effect - no crazy animations on mobile */
         @keyframes whatsappPulse {
             0%, 100% {
                 box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
             }
             50% {
-                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7), 0 0 0 10px rgba(37, 211, 102, 0.1), 0 0 0 20px rgba(37, 211, 102, 0.05);
+                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7);
             }
         }
 
-        @keyframes notificationPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.15); }
+        .whatsapp-float {
+            animation: whatsappPulse 3s infinite;
         }
 
         @media (max-width: 768px) {
@@ -3131,15 +3130,11 @@ please contact management directly.
                 right: 20px !important;
                 width: 60px !important;
                 height: 60px !important;
+                animation: none !important; /* No animation on mobile for performance */
             }
             .whatsapp-float svg {
-                width: 30px !important;
-                height: 30px !important;
-            }
-            .whatsapp-float span {
-                width: 16px !important;
-                height: 16px !important;
-                font-size: 10px !important;
+                width: 32px !important;
+                height: 32px !important;
             }
         }
     </style>
