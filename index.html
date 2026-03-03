@@ -2759,15 +2759,23 @@
 
     <script>
         // Hide page loader gracefully - FASTER ON MOBILE
-        window.addEventListener('load', function() {
-            const loader = document.getElementById('pageLoader');
-            const isMobile = window.innerWidth <= 768;
-            const delay = isMobile ? 300 : 2000; // Much faster on mobile to prevent crashes
-            
-            setTimeout(() => {
-                loader.classList.add('hidden');
-            }, delay);
-        });
+       // ⚡ INSTANT LOADING - NO DELAY!
+window.addEventListener('DOMContentLoaded', function() {
+    const loader = document.getElementById('pageLoader');
+    
+    // Hide immediately when content is ready
+    setTimeout(() => {
+        loader.classList.add('hidden');
+    }, 100); // Just 0.1 second - super fast!
+});
+
+// Backup: If DOMContentLoaded already fired
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    const loader = document.getElementById('pageLoader');
+    if (loader) {
+        loader.classList.add('hidden');
+    }
+}
         
         // MOBILE SAFETY - Disable heavy effects on mobile
         if (window.innerWidth <= 768) {
