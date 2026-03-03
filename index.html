@@ -1653,6 +1653,7 @@
                 <a href="https://www.youtube.com/watch?v=JPf2qGCLHqA" target="_blank" class="cta-button">Watch on YouTube</a>
                 <a href="https://open.spotify.com/artist/5k4fwx4cEoKw23tpX47nLQ" target="_blank" class="cta-button secondary">Listen on Spotify</a>
                 <a href="https://music.apple.com/us/artist/aaryan-tiwari/1405656980" target="_blank" class="cta-button secondary">Apple Music</a>
+                <a href="https://www.amazon.com/Mujhe-Aur-Kya-Chahiye/dp/B08WCLSGRN" target="_blank" class="cta-button secondary">Amazon Music</a>
             </div>
         </div>
 
@@ -2492,22 +2493,26 @@
                     </div>
                 </div>
 
-            </div>
-
-            <!-- Floating Mini Player Widget -->
-            <div id="floatingPlayer" style="position: fixed; bottom: 20px; right: 20px; width: 350px; background: linear-gradient(135deg, rgba(45,10,31,0.98), rgba(26,10,21,0.98)); padding: 1.5rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); border: 2px solid var(--gold); z-index: 999; opacity: 0; transform: translateY(100px); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); backdrop-filter: blur(10px);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                    <div style="display: flex; align-items: center; gap: 0.8rem;">
-                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--gold), #f4d03f); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🎤</div>
-                        <div>
-                            <div style="color: var(--cream); font-weight: bold; font-size: 0.95rem;">Now Playing</div>
-                            <div style="color: var(--gold); font-size: 0.85rem;">Latest Release</div>
+                <!-- Amazon Music Card -->
+                <div class="social-card" style="background: linear-gradient(135deg, #FF9900, #FFB84D); padding: 0.3rem; border-radius: 20px; transform: translateY(0); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);" onclick="window.open('https://www.amazon.com/Mujhe-Aur-Kya-Chahiye/dp/B08WCLSGRN', '_blank')">
+                    <div style="background: var(--dark); padding: 2rem; border-radius: 17px; cursor: pointer; height: 100%;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div style="font-size: 3rem;">📦</div>
+                            <div>
+                                <h3 style="color: #fff; margin: 0; font-size: 1.5rem;">Amazon Music</h3>
+                                <p style="margin: 0.3rem 0 0 0; color: #FF9900; font-weight: bold;">Aaryan Tiwari</p>
+                            </div>
+                        </div>
+                        <p style="opacity: 0.9; margin-bottom: 1.5rem; font-size: 0.95rem;">Stream & download songs</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="color: #FF9900; font-weight: bold; font-size: 1.3rem;">Available Now</span>
+                            <span style="background: linear-gradient(135deg, #FF9900, #FFB84D); padding: 0.5rem 1.2rem; border-radius: 20px; color: #fff; font-weight: bold; font-size: 0.9rem;">Listen →</span>
                         </div>
                     </div>
-                    <button onclick="closeFloatingPlayer()" style="background: none; border: none; color: var(--cream); font-size: 1.5rem; cursor: pointer; padding: 0.3rem; transition: transform 0.2s;" onmouseover="this.style.transform='rotate(90deg)'" onmouseout="this.style.transform='rotate(0)'">✕</button>
                 </div>
-                <iframe style="border-radius: 12px; width: 100%;" src="https://open.spotify.com/embed/track/4YBOrk3i1aokTnE9IhpLXl?utm_source=generator&theme=0" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; opacity: 0.8;">Tere Naal Yaar Bas Rehna Hai</p>
+
+            </div>
+
             </div>
         </div>
     </section>
@@ -2572,14 +2577,55 @@
             </a>
         </div>
         
-        <div class="management-contact">
-            <h3>Management Contact</h3>
-            <p style="font-size: 1.2rem;">Brijesh: <span class="highlight">+91 9892876244</span></p>
+        <div class="management-contact" style="background: linear-gradient(135deg, rgba(212,175,55,0.05), rgba(0,0,0,0.3)); padding: 3rem; border-radius: 25px; border: 2px solid rgba(212,175,55,0.3); max-width: 700px; margin: 3rem auto;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="j7-logo.jpeg" alt="J7 Events and Artist Management" style="max-width: 200px; width: 100%; margin: 0 auto 1.5rem; display: block; filter: brightness(1.1);">
+                <h3 style="color: var(--gold); font-size: 1.8rem; margin-bottom: 0.5rem; letter-spacing: 2px;">ARTIST MANAGEMENT</h3>
+                <p style="color: rgba(212,175,55,0.8); font-size: 1.1rem; letter-spacing: 3px; margin-bottom: 2rem;">J7 EVENTS AND ARTIST MANAGEMENT LLP</p>
+            </div>
+            
+            <div style="background: rgba(0,0,0,0.4); padding: 2rem; border-radius: 20px; border: 1px solid rgba(212,175,55,0.2);">
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 1rem; text-align: center; letter-spacing: 1px;">BOOKING INQUIRIES</p>
+                <div style="text-align: center;">
+                    <p style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--cream);">Brijesh Jain</p>
+                    <p style="font-size: 1.5rem; font-weight: bold;"><span style="color: #FFFFFF !important;">+91 9892876244</span></p>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+                    <a href="tel:+919892876244" class="cta-button" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; font-size: 0.95rem; text-decoration: none;">
+                        <span>📞</span>
+                        <span>Call Now</span>
+                    </a>
+                    <a href="https://wa.me/919892876244?text=Hi%20Brijesh,%20I'm%20interested%20in%20booking%20Aaryan%20Tiwari%20for%20an%20event" target="_blank" class="cta-button secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; font-size: 0.95rem; text-decoration: none;">
+                        <span>💬</span>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 💎 PREMIUM FEATURES - Billionaire-worthy touches -->
+        <div style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+            <!-- Share Profile Button -->
+            <button onclick="shareProfile()" class="cta-button" style="display: inline-flex; align-items: center; gap: 0.8rem; cursor: pointer; border: none;">
+                <span>🔗</span>
+                <span>Share Profile</span>
+            </button>
+            
+            <!-- Download Contact (vCard) Button -->
+            <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:Aaryan%20Tiwari%0AN:Tiwari;Aaryan;;;%0AORG:Independent%20Artist%0ATITLE:Singer%20|%20Composer%20|%20Lyricist%0ATEL;TYPE=WORK,VOICE:+91%209892876244%0AEMAIL:contact@aaryantiwari.com%0AURL:https://www.aaryantiwari.com%0ANOTE:An%20IITian%20turned%20musician%20from%20Mumbai%0AEND:VCARD" 
+               download="Aaryan_Tiwari_Contact.vcf" 
+               class="cta-button secondary" 
+               style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none;">
+                <span>📇</span>
+                <span>Save Contact</span>
+            </a>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2025 Aaryan Tiwari. All Rights Reserved.</p>
+        <p style="margin-top: 0.8rem; opacity: 0.6; font-size: 0.9rem; letter-spacing: 1px;">Managed by <span style="color: var(--gold);">J7 Events and Artist Management LLP</span></p>
         <p style="margin-top: 1rem; opacity: 0.7;">Crafted with 🎵</p>
     </footer>
 
@@ -2605,6 +2651,103 @@
             // Remove expensive animation elements
             const heavyElements = document.querySelectorAll('.glow-ring, .luxury-frame, .gold-particles');
             heavyElements.forEach(el => el.remove());
+        }
+        
+        // 🔥 CRITICAL: LAZY LOADING FOR BULLETPROOF PERFORMANCE
+        // This prevents crashes by loading content only when visible
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lazy load ALL iframes (YouTube, Spotify)
+            const lazyIframes = document.querySelectorAll('iframe[data-src]');
+            
+            const iframeObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const iframe = entry.target;
+                        iframe.src = iframe.dataset.src;
+                        iframe.removeAttribute('data-src');
+                        observer.unobserve(iframe);
+                    }
+                });
+            }, {
+                rootMargin: '50px' // Start loading 50px before visible
+            });
+            
+            lazyIframes.forEach(iframe => iframeObserver.observe(iframe));
+            
+            // Lazy load ALL images
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('loading' in HTMLImageElement.prototype) {
+                // Browser supports native lazy loading
+                lazyImages.forEach(img => {
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                    }
+                });
+            } else {
+                // Fallback for older browsers
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                                img.removeAttribute('data-src');
+                            }
+                            img.classList.add('loaded');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => imageObserver.observe(img));
+            }
+        });
+        
+        // 💎 PREMIUM FEATURE: Share Profile (Web Share API)
+        function shareProfile() {
+            const shareData = {
+                title: 'Aaryan Tiwari - Singer, Composer, Lyricist',
+                text: 'Check out Aaryan Tiwari - An IITian turned musician from Mumbai! 🎵',
+                url: window.location.href
+            };
+            
+            if (navigator.share) {
+                // Use native share if available (mobile)
+                navigator.share(shareData)
+                    .then(() => console.log('Shared successfully'))
+                    .catch((error) => console.log('Error sharing', error));
+            } else {
+                // Fallback: Copy to clipboard
+                const url = window.location.href;
+                navigator.clipboard.writeText(url).then(() => {
+                    // Show elegant notification
+                    const notification = document.createElement('div');
+                    notification.textContent = '✓ Link copied to clipboard!';
+                    notification.style.cssText = `
+                        position: fixed;
+                        bottom: 100px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background: linear-gradient(135deg, var(--gold), #f4d03f);
+                        color: var(--dark);
+                        padding: 1rem 2rem;
+                        border-radius: 50px;
+                        font-weight: bold;
+                        box-shadow: 0 10px 40px rgba(212,175,55,0.4);
+                        z-index: 10000;
+                        animation: slideUp 0.3s ease;
+                    `;
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transform = 'translateX(-50%) translateY(-20px)';
+                        notification.style.transition = 'all 0.3s ease';
+                        setTimeout(() => notification.remove(), 300);
+                    }, 2000);
+                });
+            }
         }
         
         // Mobile menu toggle
@@ -3003,26 +3146,7 @@ please contact management directly.
                     this.style.boxShadow = 'none';
                 });
             });
-            
-            // Show floating player after 5 seconds
-            setTimeout(() => {
-                const floatingPlayer = document.getElementById('floatingPlayer');
-                if (floatingPlayer) {
-                    floatingPlayer.style.opacity = '1';
-                    floatingPlayer.style.transform = 'translateY(0)';
-                }
-            }, 5000);
         });
-        
-        // Close floating player
-        function closeFloatingPlayer() {
-            const floatingPlayer = document.getElementById('floatingPlayer');
-            floatingPlayer.style.opacity = '0';
-            floatingPlayer.style.transform = 'translateY(100px)';
-            setTimeout(() => {
-                floatingPlayer.style.display = 'none';
-            }, 500);
-        }
     </script>
     
     <!-- Animations & Floating Player Styles -->
@@ -3033,16 +3157,6 @@ please contact management directly.
             }
             100% {
                 transform: translate(50px, 50px);
-            }
-        }
-        
-        /* Responsive floating player */
-        @media (max-width: 768px) {
-            #floatingPlayer {
-                width: calc(100% - 40px) !important;
-                left: 20px;
-                right: 20px;
-                bottom: 10px;
             }
         }
         
@@ -3117,6 +3231,17 @@ please contact management directly.
             }
             50% {
                 box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7);
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
             }
         }
 
