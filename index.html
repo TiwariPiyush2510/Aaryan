@@ -84,6 +84,22 @@
     </script>
     
     <style>
+        /* MOBILE CRASH FIX - Reduce performance load */
+        @media (max-width: 768px) {
+            * {
+                animation-duration: 0s !important;
+                transition-duration: 0.15s !important;
+            }
+            
+            /* Disable expensive effects on mobile */
+            .glow-ring,
+            .luxury-frame,
+            .gold-particles,
+            .luxury-gradient-bg {
+                display: none !important;
+            }
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -2570,14 +2586,26 @@
     <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
 
     <script>
-        // Hide page loader gracefully after content loads
+        // Hide page loader gracefully - FASTER ON MOBILE
         window.addEventListener('load', function() {
             const loader = document.getElementById('pageLoader');
-            // Keep the logo visible for 2 seconds after page loads, then fade slowly
+            const isMobile = window.innerWidth <= 768;
+            const delay = isMobile ? 300 : 2000; // Much faster on mobile to prevent crashes
+            
             setTimeout(() => {
                 loader.classList.add('hidden');
-            }, 2000); // Changed from 500ms to 2000ms for graceful exit
+            }, delay);
         });
+        
+        // MOBILE SAFETY - Disable heavy effects on mobile
+        if (window.innerWidth <= 768) {
+            // Add mobile-safe class to body
+            document.body.classList.add('mobile-safe');
+            
+            // Remove expensive animation elements
+            const heavyElements = document.querySelectorAll('.glow-ring, .luxury-frame, .gold-particles');
+            heavyElements.forEach(el => el.remove());
+        }
         
         // Mobile menu toggle
         function toggleMenu() {
