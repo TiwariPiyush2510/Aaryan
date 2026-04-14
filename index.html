@@ -1638,28 +1638,44 @@
             <p>"An IITian Turned Musician"</p>
             <p>IIT Roorkee | Harvard | Mumbai-based Artist</p>
             <div>
-                <a href="#latest" class="cta-button">Latest Release</a>
+                <a href="#latest" class="cta-button">🎂 Coming April 21</a>
                 <a href="#contact" class="cta-button secondary">Get in Touch</a>
             </div>
         </div>
     </section>
 
     <section id="latest" class="fade-in">
-        <h2>Latest Release</h2>
+        <h2>🎂 Coming Soon</h2>
         <div class="featured-release">
-            <h3 class="featured-song-title">Tere Naal Yaar Bas Rehna Hai</h3>
-            <p class="featured-song-sub">Latest Music Video - Out Now on All Platforms</p>
-            <div class="featured-links">
-                <a href="https://www.youtube.com/watch?v=JPf2qGCLHqA" target="_blank" class="cta-button">Watch on YouTube</a>
-                <a href="https://open.spotify.com/artist/5k4fwx4cEoKw23tpX47nLQ" target="_blank" class="cta-button secondary">Listen on Spotify</a>
-                <a href="https://music.apple.com/us/artist/aaryan-tiwari/1405656980" target="_blank" class="cta-button secondary">Apple Music</a>
-                <a href="https://www.amazon.com/Mujhe-Aur-Kya-Chahiye/dp/B08WCLSGRN" target="_blank" class="cta-button secondary">Amazon Music</a>
+            <h3 class="featured-song-title">JHOOTHA</h3>
+            <p class="featured-song-sub" style="font-size: 1.3rem; color: var(--gold); margin: 1rem 0;">Releasing on April 21, 2026</p>
+            <p class="featured-song-sub" style="font-size: 1.1rem; opacity: 0.9;">🎉 A Special Birthday Release 🎉</p>
+            <div style="background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(0,0,0,0.3)); padding: 2rem; border-radius: 20px; margin: 2rem auto; max-width: 600px; border: 2px solid var(--gold);">
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;">Mark your calendars! 📅</p>
+                <p style="font-size: 2.5rem; font-weight: bold; color: var(--gold); margin: 0.5rem 0;">April 21, 2026</p>
+                <p style="opacity: 0.8; margin-top: 1rem;">Aaryan's Birthday Special Release</p>
             </div>
         </div>
 
         <div class="album-section">
-            <img src="img/IMG_8545.JPEG" alt="Tere Naal Yaar Bas Rehna Hai - Aaryan Tiwari" style="max-width: 500px; width: 100%; margin: 2rem auto; border-radius: 20px; border: 3px solid var(--gold); box-shadow: var(--shadow); display: block;">
-            <p style="opacity: 0.9; margin-top: 1rem;">A heartfelt melody that captures the essence of companionship and belonging</p>
+            <img src="img/IMG_9522_JPG.jpeg" alt="Jhootha - Aaryan Tiwari" style="max-width: 500px; width: 100%; margin: 2rem auto; border-radius: 20px; border: 3px solid var(--gold); box-shadow: var(--shadow); display: block;">
+            <p style="opacity: 0.9; margin-top: 1rem; font-size: 1.1rem;">A powerful new track dropping on Aaryan's birthday!</p>
+            <p style="opacity: 0.7; margin-top: 0.5rem;">Stay tuned for the premiere 🎵</p>
+        </div>
+        
+        <!-- Previous Release -->
+        <div style="margin-top: 4rem; padding-top: 3rem; border-top: 2px solid rgba(212,175,55,0.3);">
+            <h3 style="text-align: center; margin-bottom: 2rem; opacity: 0.8;">Previous Release</h3>
+            <div class="featured-release">
+                <h3 class="featured-song-title">Tere Naal Yaar Bas Rehna Hai</h3>
+                <p class="featured-song-sub">Out Now on All Platforms</p>
+                <div class="featured-links">
+                    <a href="https://www.youtube.com/watch?v=JPf2qGCLHqA" target="_blank" class="cta-button">Watch on YouTube</a>
+                    <a href="https://open.spotify.com/artist/5k4fwx4cEoKw23tpX47nLQ" target="_blank" class="cta-button secondary">Listen on Spotify</a>
+                    <a href="https://music.apple.com/us/artist/aaryan-tiwari/1405656980" target="_blank" class="cta-button secondary">Apple Music</a>
+                    <a href="https://www.amazon.com/Mujhe-Aur-Kya-Chahiye/dp/B08WCLSGRN" target="_blank" class="cta-button secondary">Amazon Music</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -2765,9 +2781,9 @@ window.addEventListener('DOMContentLoaded', function() {
     const loader = document.getElementById('pageLoader');
     const isMobile = window.innerWidth <= 768;
     
-    // Mobile: 1.2 seconds (perfect timing to see the guitar!)
-    // Desktop: 0.5 seconds (faster for desktop users)
-    const delay = isMobile ? 1500 : 500;
+    // Mobile: 2.8 seconds (extended to see the guitar animation better!)
+    // Desktop: 1.5 seconds (slowed down for better visibility)
+    const delay = isMobile ? 2800 : 1500;
     
     setTimeout(() => {
         loader.classList.add('hidden');
@@ -2780,7 +2796,7 @@ if (document.readyState === 'interactive' || document.readyState === 'complete')
     if (loader) {
         setTimeout(() => {
             loader.classList.add('hidden');
-        }, window.innerWidth <= 768 ? 1200 : 500);
+        }, window.innerWidth <= 768 ? 2800 : 1500);
     }
 }
         
