@@ -660,6 +660,18 @@
                 width: 100%;
             }
 
+            /* Hero Content - Mobile Adjustments */
+            .hero-content {
+                bottom: 5% !important;
+                left: 3% !important;
+                right: 3% !important;
+                max-width: none !important;
+            }
+            
+            .hero-content > div {
+                padding: 1.5rem 1.8rem !important;
+            }
+
             nav {
                 padding: 0.85rem 4%;
             }
@@ -1632,14 +1644,26 @@
         </div>
         <div class="hero-overlay"></div>
         
-        <div class="hero-content">
-            <h1>AARYAN TIWARI</h1>
-            <p>Singer · Composer · Lyricist · Performer</p>
-            <p>"An IITian Turned Musician"</p>
-            <p>IIT Roorkee | Harvard | Mumbai-based Artist</p>
-            <div>
-                <a href="#latest" class="cta-button">🎂 Coming April 21</a>
-                <a href="#contact" class="cta-button secondary">Get in Touch</a>
+        <!-- Redesigned Hero Content - Bottom Left Positioning -->
+        <div class="hero-content" style="position: absolute; bottom: 8%; left: 5%; text-align: left; max-width: 600px; z-index: 10;">
+            <div style="background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(45,10,31,0.85)); backdrop-filter: blur(10px); padding: 2.5rem 3rem; border-radius: 25px; border-left: 5px solid var(--gold); box-shadow: 0 20px 60px rgba(0,0,0,0.6);">
+                <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1rem; text-shadow: 0 4px 20px rgba(212,175,55,0.5);">AARYAN TIWARI</h1>
+                <p style="font-size: clamp(1rem, 2.5vw, 1.3rem); margin: 0.8rem 0; opacity: 0.95; color: #fff;">Singer · Composer · Lyricist · Performer</p>
+                <p style="font-size: clamp(1rem, 2.2vw, 1.2rem); margin: 0.8rem 0; color: var(--gold); font-style: italic;">"An IITian Turned Musician"</p>
+                <p style="font-size: clamp(0.9rem, 2vw, 1.1rem); margin: 1rem 0 1.5rem 0; opacity: 0.85;">IIT Roorkee | Harvard | Mumbai-based Artist</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#latest" class="cta-button" style="display: inline-flex; align-items: center; gap: 0.5rem;">🎂 Coming April 21</a>
+                    <a href="#contact" class="cta-button secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Top Right "New Release" Badge -->
+        <div style="position: absolute; top: 100px; right: 5%; z-index: 10;">
+            <div style="background: linear-gradient(135deg, var(--gold), #b8941f); padding: 1.5rem 2.5rem; border-radius: 15px; box-shadow: 0 10px 40px rgba(212,175,55,0.6); transform: rotate(3deg); animation: float 3s ease-in-out infinite;">
+                <p style="font-size: 0.9rem; margin: 0; color: var(--dark); font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">New Single</p>
+                <p style="font-size: 1.8rem; margin: 0.3rem 0 0 0; color: var(--dark); font-weight: bold;">JHOOTHA</p>
+                <p style="font-size: 0.85rem; margin: 0; color: var(--dark); opacity: 0.9;">April 21, 2026</p>
             </div>
         </div>
     </section>
