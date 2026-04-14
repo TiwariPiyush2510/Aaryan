@@ -677,17 +677,87 @@
                 bottom: 0 !important;
                 padding-bottom: 1.5rem !important;
                 padding-top: 1rem !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
                 background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 70%, transparent 100%) !important;
             }
             
             .hero-content h1 {
-                font-size: 2.2rem !important;
+                font-size: 2rem !important;
                 margin-bottom: 0.5rem !important;
             }
             
             .hero-content p {
-                font-size: 0.9rem !important;
-                margin: 0.4rem 0 !important;
+                font-size: 0.85rem !important;
+                margin: 0.3rem 0 !important;
+            }
+            
+            .hero-content div {
+                flex-direction: column !important;
+                gap: 0.8rem !important;
+            }
+            
+            .hero-content a {
+                width: 100% !important;
+                max-width: 300px !important;
+                justify-content: center !important;
+            }
+            
+            /* Countdown Timer - Mobile */
+            #countdown {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1rem !important;
+            }
+            
+            #countdown > div {
+                padding: 1rem 0.5rem !important;
+            }
+            
+            #countdown > div > div:first-child {
+                font-size: 1.8rem !important;
+            }
+            
+            #countdown > div > div:last-child {
+                font-size: 0.75rem !important;
+            }
+            
+            /* Email Form - Mobile */
+            #notifyForm {
+                flex-direction: column !important;
+            }
+            
+            #emailInput {
+                min-width: 100% !important;
+            }
+            
+            /* BTS Videos - Mobile */
+            #bts video {
+                max-height: 300px !important;
+            }
+            
+            /* Instagram Feed - Mobile */
+            #instagram {
+                padding: 2rem 3% !important;
+            }
+            
+            /* Sections - Mobile */
+            section {
+                padding: 2.5rem 4% !important;
+            }
+            
+            /* Stats Grid - Mobile */
+            .stats {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1rem !important;
+            }
+            
+            .stat-box {
+                padding: 1.2rem 0.8rem !important;
+            }
+            
+            /* Hide sticky button on mobile to avoid clutter */
+            #stickyNotifyBtn {
+                display: none !important;
             }
 
             nav {
