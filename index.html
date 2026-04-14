@@ -1753,7 +1753,7 @@
                 <div style="background: rgba(0,0,0,0.4); border-radius: 20px; overflow: hidden; border: 2px solid rgba(212,175,55,0.3); transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" 
                      onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='var(--gold)'; this.style.boxShadow='0 20px 50px rgba(212,175,55,0.4)'"
                      onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(212,175,55,0.3)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'">
-                    <video controls style="width: 100%; display: block; background: #000;" poster="">
+                    <video controls preload="metadata" style="width: 100%; display: block; background: #000;" poster="img/bts_thumb_1.jpg">
                         <source src="img/bts_video_1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1767,7 +1767,7 @@
                 <div style="background: rgba(0,0,0,0.4); border-radius: 20px; overflow: hidden; border: 2px solid rgba(212,175,55,0.3); transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" 
                      onmouseover="this.style.transform='translateY(-10px)'; this.style.borderColor='var(--gold)'; this.style.boxShadow='0 20px 50px rgba(212,175,55,0.4)'"
                      onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(212,175,55,0.3)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'">
-                    <video controls style="width: 100%; display: block; background: #000;" poster="">
+                    <video controls preload="metadata" style="width: 100%; display: block; background: #000;" poster="img/bts_thumb_2.jpg">
                         <source src="img/bts_video_2.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -2809,6 +2809,64 @@
             <div style="text-align: center;">
                 <div style="font-size: 2rem; color: var(--gold); font-weight: bold;">25+</div>
                 <div style="opacity: 0.8; font-size: 0.9rem;">Original Songs</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📸 INSTAGRAM FEED SECTION -->
+    <section id="instagram" class="fade-in" style="background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(0,0,0,0.4)); border: 3px solid rgba(212,175,55,0.4); border-radius: 30px; padding: 4rem 5%; margin-top: 3rem; position: relative; overflow: hidden;">
+        
+        <!-- Background Pattern -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.03; background-image: repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 1px, transparent 20px); pointer-events: none;"></div>
+        
+        <div style="position: relative; z-index: 1;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">📸 Follow the Journey</h2>
+                <p style="color: var(--gold); font-size: 1.3rem; opacity: 0.9;">@aaryantiwarimusic</p>
+                <p style="opacity: 0.8; margin-top: 0.5rem; font-size: 1rem;">Daily updates, BTS, and exclusive content</p>
+            </div>
+            
+            <!-- Instagram Embed Container -->
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <!-- Live Instagram Feed Widget -->
+                <div style="background: rgba(0,0,0,0.3); border-radius: 20px; padding: 3rem 2rem; border: 2px solid rgba(212,175,55,0.3);">
+                    
+                    <!-- Elfsight Instagram Feed Widget -->
+                    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                    <div class="elfsight-app-fce14483-e3a4-4f97-93db-b4217ba3efdf" data-elfsight-app-lazy></div>
+                    
+                    <!-- Fallback: Manual Grid (shows while loading or if widget fails) -->
+                    <noscript>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                            <div style="background: rgba(0,0,0,0.4); border-radius: 15px; overflow: hidden; border: 2px solid rgba(212,175,55,0.2); padding: 2rem; text-align: center;">
+                                <p style="font-size: 3rem; margin-bottom: 1rem;">📸</p>
+                                <p style="opacity: 0.9; margin-bottom: 1rem;">Follow for latest updates</p>
+                                <a href="https://www.instagram.com/aaryantiwarimusic/" target="_blank" style="color: var(--gold); text-decoration: none; font-weight: bold;">View on Instagram →</a>
+                            </div>
+                        </div>
+                    </noscript>
+                    
+                    <!-- Call to Action -->
+                    <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(212,175,55,0.2);">
+                        <a href="https://www.instagram.com/aaryantiwarimusic/" target="_blank" class="cta-button" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none;">
+                            <span>📱</span>
+                            <span>Follow @aaryantiwarimusic</span>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Instagram Stats -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div style="text-align: center; padding: 2rem; background: rgba(212,175,55,0.1); border-radius: 15px; border: 2px solid rgba(212,175,55,0.3);">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: var(--gold); margin-bottom: 0.5rem;">150K+</div>
+                    <div style="opacity: 0.8; font-size: 0.95rem;">Instagram Followers</div>
+                </div>
+                <div style="text-align: center; padding: 2rem; background: rgba(212,175,55,0.1); border-radius: 15px; border: 2px solid rgba(212,175,55,0.3);">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: var(--gold); margin-bottom: 0.5rem;">Daily</div>
+                    <div style="opacity: 0.8; font-size: 0.95rem;">Fresh Content</div>
+                </div>
             </div>
         </div>
     </section>
