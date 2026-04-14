@@ -100,6 +100,18 @@
             }
         }
         
+        /* Hide Elfsight branding badge */
+        .eapps-link,
+        .eapps-instagram-feed-posts-link,
+        [class*="eapps"][class*="link"],
+        a[href*="elfsight.com"],
+        div[class*="eapps-instagram-feed-branding"] {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
+        
         * {
             margin: 0;
             padding: 0;
