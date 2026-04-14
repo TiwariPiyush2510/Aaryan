@@ -1671,10 +1671,43 @@
             <h3 class="featured-song-title">JHOOTHA</h3>
             <p class="featured-song-sub" style="font-size: 1.3rem; color: var(--gold); margin: 1rem 0;">Releasing on April 21, 2026</p>
             <p class="featured-song-sub" style="font-size: 1.1rem; opacity: 0.9;">🎉 A Special Birthday Release 🎉</p>
-            <div style="background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(0,0,0,0.3)); padding: 2rem; border-radius: 20px; margin: 2rem auto; max-width: 600px; border: 2px solid var(--gold);">
-                <p style="font-size: 1.2rem; margin-bottom: 1rem;">Mark your calendars! 📅</p>
-                <p style="font-size: 2.5rem; font-weight: bold; color: var(--gold); margin: 0.5rem 0;">April 21, 2026</p>
-                <p style="opacity: 0.8; margin-top: 1rem;">Aaryan's Birthday Special Release</p>
+            
+            <!-- COUNTDOWN TIMER -->
+            <div style="background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(0,0,0,0.3)); padding: 3rem 2rem; border-radius: 20px; margin: 2rem auto; max-width: 700px; border: 2px solid var(--gold);">
+                <p style="font-size: 1.3rem; margin-bottom: 2rem; color: var(--gold); font-weight: bold;">⏰ Countdown to Release</p>
+                
+                <!-- Countdown Display -->
+                <div id="countdown" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+                    <div style="background: rgba(0,0,0,0.5); padding: 1.5rem 1rem; border-radius: 15px; border: 2px solid var(--gold);">
+                        <div id="days" style="font-size: 2.5rem; font-weight: bold; color: var(--gold);">00</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Days</div>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.5); padding: 1.5rem 1rem; border-radius: 15px; border: 2px solid var(--gold);">
+                        <div id="hours" style="font-size: 2.5rem; font-weight: bold; color: var(--gold);">00</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Hours</div>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.5); padding: 1.5rem 1rem; border-radius: 15px; border: 2px solid var(--gold);">
+                        <div id="minutes" style="font-size: 2.5rem; font-weight: bold; color: var(--gold);">00</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Minutes</div>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.5); padding: 1.5rem 1rem; border-radius: 15px; border: 2px solid var(--gold);">
+                        <div id="seconds" style="font-size: 2.5rem; font-weight: bold; color: var(--gold);">00</div>
+                        <div style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Seconds</div>
+                    </div>
+                </div>
+                
+                <!-- Email Signup Form -->
+                <div style="background: rgba(212,175,55,0.1); padding: 2rem; border-radius: 15px; border: 1px solid rgba(212,175,55,0.3);">
+                    <p style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: bold;">🔔 Get Notified When Jhootha Drops!</p>
+                    <p style="opacity: 0.8; margin-bottom: 1.5rem; font-size: 0.95rem;">Be the first to know when the song goes live</p>
+                    
+                    <form id="notifyForm" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                        <input type="email" id="emailInput" placeholder="Enter your email" required 
+                               style="flex: 1; min-width: 250px; padding: 1rem 1.5rem; border-radius: 50px; border: 2px solid var(--gold); background: rgba(0,0,0,0.5); color: white; font-size: 1rem; outline: none;">
+                        <button type="submit" class="cta-button" style="white-space: nowrap;">Notify Me! 🔥</button>
+                    </form>
+                    <p id="formMessage" style="margin-top: 1rem; font-size: 0.9rem; display: none;"></p>
+                </div>
             </div>
         </div>
 
@@ -3327,6 +3360,75 @@ please contact management directly.
         });
     </script>
     
+    <!-- COUNTDOWN TIMER & EMAIL SIGNUP SCRIPT -->
+    <script>
+        // Countdown Timer to April 21, 2026
+        function updateCountdown() {
+            const releaseDate = new Date('April 21, 2026 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = releaseDate - now;
+            
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<div style="grid-column: 1/-1; font-size: 2rem; color: var(--gold);">🎉 JHOOTHA IS OUT NOW! 🎉</div>';
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+        
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Email Signup Form Handler
+        document.getElementById('notifyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('emailInput').value;
+            const messageEl = document.getElementById('formMessage');
+            
+            // Basic email validation
+            if (!email || !email.includes('@')) {
+                messageEl.textContent = '⚠️ Please enter a valid email address';
+                messageEl.style.color = '#ff6b6b';
+                messageEl.style.display = 'block';
+                return;
+            }
+            
+            // Store email in localStorage (you can replace this with actual backend integration)
+            let emails = JSON.parse(localStorage.getItem('jhoothaNotifications') || '[]');
+            
+            if (emails.includes(email)) {
+                messageEl.textContent = '✅ You\'re already on the list!';
+                messageEl.style.color = 'var(--gold)';
+            } else {
+                emails.push(email);
+                localStorage.setItem('jhoothaNotifications', JSON.stringify(emails));
+                
+                messageEl.textContent = '🎉 Success! You\'ll be notified when Jhootha drops!';
+                messageEl.style.color = '#4ade80';
+                
+                // Clear form
+                document.getElementById('emailInput').value = '';
+            }
+            
+            messageEl.style.display = 'block';
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageEl.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+    
     <!-- Animations & Floating Player Styles -->
     <style>
         @keyframes backgroundMove {
@@ -3601,6 +3703,33 @@ console.log('🔥 Mobile-safe animations loaded!');
             }
         }
     </style>
+    
+    <!-- STICKY FLOATING "GET NOTIFIED" BUTTON -->
+    <div id="stickyNotifyBtn" style="position: fixed; bottom: 100px; right: 25px; z-index: 9997; opacity: 0; transition: opacity 0.3s ease;">
+        <a href="#latest" 
+           style="display: flex; align-items: center; gap: 0.8rem; background: linear-gradient(135deg, var(--gold), #b8941f); padding: 1rem 1.5rem; border-radius: 50px; text-decoration: none; color: var(--dark); font-weight: bold; box-shadow: 0 10px 40px rgba(212,175,55,0.5); transition: all 0.3s ease;"
+           onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 50px rgba(212,175,55,0.7)'"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(212,175,55,0.5)'">
+            <span style="font-size: 1.3rem;">🔔</span>
+            <span>Get Notified!</span>
+        </a>
+    </div>
+    
+    <script>
+        // Show/Hide Sticky Button on Scroll
+        window.addEventListener('scroll', function() {
+            const stickyBtn = document.getElementById('stickyNotifyBtn');
+            const latestSection = document.getElementById('latest');
+            const latestRect = latestSection.getBoundingClientRect();
+            
+            // Show button when user scrolls past hero section, hide when in "latest" section
+            if (window.scrollY > 600 && (latestRect.top > window.innerHeight || latestRect.bottom < 0)) {
+                stickyBtn.style.opacity = '1';
+            } else {
+                stickyBtn.style.opacity = '0';
+            }
+        });
+    </script>
 
 </body>
 </html>
