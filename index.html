@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#2d0a1f">
     
+    <!-- Premium Font Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- SEO Meta Tags -->
     <meta name="description" content="Aaryan Tiwari - Mumbai-based Singer, Composer & Lyricist. IIT Roorkee & Harvard alumnus. Listen to latest hits like Tere Naal Yaar Bas Rehna Hai, Saawariya, Zaroorat. Bollywood collaborations with Mahesh Bhatt & Arijit Singh.">
     <meta name="keywords" content="Aaryan Tiwari, Indian Singer, Composer, Lyricist, IIT Roorkee, Mumbai Music, Bollywood, Tere Naal Yaar, Doob Jaane Do, Zaroorat, Hindi Songs, Independent Music India">
@@ -120,6 +125,8 @@
 
         :root {
             --gold: #d4af37;
+            --gold-light: #f0d078;
+            --gold-dark: #a8871c;
             --burgundy: #2d0a1f;
             --cream: #f5f1e8;
             --dark: #1a0a15;
@@ -129,6 +136,9 @@
             --stroke2: rgba(212, 175, 55, 0.35);
             --shadow: 0 12px 40px rgba(0,0,0,0.35);
             --shadow2: 0 8px 22px rgba(0,0,0,0.28);
+            --shadow-gold: 0 10px 40px rgba(212, 175, 55, 0.2);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
         }
 
         html {
@@ -136,8 +146,8 @@
         }
 
         body {
-            font-family: ui-serif, Georgia, "Times New Roman", serif;
-            background: linear-gradient(135deg, var(--burgundy) 0%, var(--dark) 100%);
+            font-family: 'Inter', ui-serif, Georgia, "Times New Roman", serif;
+            background: linear-gradient(135deg, #0f0510 0%, var(--burgundy) 40%, #1a0f1a 100%);
             background-attachment: fixed;
             color: var(--cream);
             line-height: 1.7;
@@ -150,9 +160,22 @@
             width: 100%;
         }
 
-        /* Atmospheric overlay */
+        /* Premium atmospheric overlay with depth */
         body::before {
             content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(45, 10, 31, 0.6) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.7;
+        }
             position: fixed;
             inset: 0;
             pointer-events: none;
